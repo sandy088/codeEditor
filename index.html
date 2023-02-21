@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="prism-okaidia.css">
+    <script src="prism.js"></script>
+</head>
+<body>
+    <!-- Wraper -->
+    <div class="h-screen w-screen bg-red-400">
+
+        <!-- content -->
+        <div class="w-[900px] h-[100%] mx-auto flex justify-center items-center gap-4 flex-col">
+            <h1 class="text-[40px] font-bold">
+                Micro Code Editor
+            </h1>
+            <h3 class="text-[25px]">Syntax Highlighter</h3>
+
+            <!-- main code editor -->
+            <div class=" max-w-[600px] h-[65%] shadow-[35px_35px_60px_-15px_rgba(0,0,0,0.3)] rounded-md ">
+                <!-- top bar -->
+                <div class="w-[600px] bg-slate-200 flex justify-between rounded-tl-lg rounded-tr-lg items-center p-4 ">
+                    <div class="flex gap-2">
+                    <!-- three dots -->
+                    <div class=" bg-yellow-300 rounded-full h-3 w-3"></div>
+                    <div class=" bg-green-300 rounded-full h-3 w-3"></div>
+                    <div class=" bg-red-300 rounded-full h-3 w-3"></div>
+
+                  </div>
+
+                  <!-- CodeSelect -->
+                  <div>JavaScript</div>
+                </div>
+                <code id="code"><textarea  class="w-[100%] h-[88%] bg-slate-50 rounded-bl-lg rounded-br-lg p-5 opacity-60">
+                   
+                </textarea></code>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var code = document.getElementById("code");
+        code.addEventListener("input", function() {
+          code.innerHTML = Prism.highlight(code.value, Prism.languages.javascript, "javascript");
+        });
+    </script>
+      
+</body>
+</html>
